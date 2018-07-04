@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import ogr
 
+# The only way to get MDBs to load in 64-bit is by renaming the Registry Key 
+# HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\Microsoft Access Driver (*.mdb, *.accdb) 
+# to 
+# HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\Microsoft Access Driver (*.mdb) using regedit.
+
 ds = ogr.Open(r'D:\Wordpress\Amritdai\04printmdb\Nilbarahi.mdb')
 lyr = ds.GetLayer("Parcel")
 
